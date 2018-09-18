@@ -17,8 +17,8 @@ f.close()
 
 class my_handler(FileSystemEventHandler):
     def on_modified(self,event):
-        data=subprocess.check_output(['tail', '-1', "t.csv"])
-        # print(data)
+        data=subprocess.check_output(['tail', '-1', sys.argv[2]])
+        print(data)
         global s
         s.send(data)
 
@@ -34,3 +34,4 @@ except KeyboardInterrupt:
     s.close()
     observer.stop()
 observer.join()
+s.close()
