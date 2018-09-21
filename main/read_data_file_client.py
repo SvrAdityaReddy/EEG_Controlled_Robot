@@ -5,7 +5,7 @@ import subprocess
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-HOST = '127.0.0.1'  
+HOST = '10.10.10.10'  
 PORT = 65432
 
 s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
