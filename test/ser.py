@@ -13,7 +13,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     mean=0
     i=0
     j=0
-    rbt = EasyGoPiGo3()
+    rbt = easygopigo3.EasyGoPiGo3()
+    m_st=True
     with conn:
         print('Connected by', addr)
         try:
@@ -41,7 +42,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                                     if(abs(val-mean)>100):
                                         j=j+1
                                         print("Blink",j)
-                                        rbt.forward()
+                                        if(m_st):
+                                            rbt.backward()
+                                            m_st=False
+                                        else:
+                                            rbt.stop()
+                                            m_st=True
                                     count=0
                                     mean=0
         except KeyboardInterrupt:
