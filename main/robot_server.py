@@ -32,11 +32,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         for k in range(len(dat)):
                             # print(float(dat[i]),count)
                             if(count!=8):
-                                if(1):
+                                if(len(dat[k])>=4):
                                     mean=mean+abs(float(dat[k]))
                                     count=count+1
                             if(count==8):
-                                if(1):
+                                if(len(dat[k])>=4):
                                     val=abs(float(dat[k]))
                                     mean=mean/8.0
                                     if(abs(val-mean)>100):
