@@ -1,1 +1,1 @@
-# blkrbt
+# EEG Controlled Robot
