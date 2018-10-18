@@ -21,7 +21,7 @@ The blink is detected from EEG signal as follow. <br>
 
 ## Challenges
 
-The OpenBCI GUI writes data of different EEG channels to a file. Inorder to a new sample written to file we had used **watchdog** to capture file system change events, when a change is observed an observer calls a function which reads new samples of different channels and transmits data of required channel namely FP1 using bash commands **tail**, **cut** and data is transmitted over socket to server running on gopigo robot. 
+The OpenBCI GUI writes data of different EEG channels to a file. Inorder to get a new sample written to file we had used **watchdog** to capture file system change events, when a change is observed an observer calls a function which reads new samples of different channels and transmits data of required channel namely FP1 using bash commands **tail**, **cut** and data is transmitted over socket to server running on gopigo robot. 
 
 ``` {python}
 
