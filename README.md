@@ -18,3 +18,24 @@ The blink is detected from EEG signal as follow. <br>
 
 1. The absolute current sample value is subtracted from the mean of previous 8 absolute sample values.
 2. If the absolute deviation of the absolute current sample value is subtracted from the mean of previous 8 absolute sample values is greater than 100 we detect it as blink
+
+## Challenges
+
+The OpenBCI GUI writes data of different EEG channels to a file. Inorder to a new sample written to file we had used **watchdog** to capture file system change events, when a change is observed an observer calls a function which reads new samples of different channels and transmits data of required channel namely FP1 using bash commands **tail**, **cut** and data is transmitted over socket to server running on gopigo robot. 
+
+``` {python}
+
+class my_handler(FileSystemEventHandler):
+    def on_modified(self,event):
+        os.system('tail -1 '+ sys.argv[2] + ' | cut -d "," -f2 > tmp')
+        data=open('tmp', 'r').read()
+        print(data)
+        global s
+        s.send(str.encode(data))
+
+event_handler = my_handler()
+observer = Observer()
+observer.schedule(event_handler, path, recursive=False)
+observer.start()
+
+```
