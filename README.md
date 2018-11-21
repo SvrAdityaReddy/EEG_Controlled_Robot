@@ -42,7 +42,7 @@ observer.start()
 
 References:
 
-[1][Automated eye blink detection online by Irene Vigué Guix](https://irenevigueguix.wordpress.com/2016/08/10/automated-eye-blink-detection-online/)
-[2][Execute shell commands in Python](https://unix.stackexchange.com/questions/238180/execute-shell-commands-in-python)
-[3][Socket Programming in Python (Guide) by Nathan Jennings](https://realpython.com/python-sockets/)
-[4][python watchdog monitoring file for changes](https://stackoverflow.com/questions/18599339/python-watchdog-monitoring-file-for-changes)
+[1] [Automated eye blink detection online by Irene Vigué Guix](https://irenevigueguix.wordpress.com/2016/08/10/automated-eye-blink-detection-online/) <br>
+[2] [Execute shell commands in Python](https://unix.stackexchange.com/questions/238180/execute-shell-commands-in-python) <br>
+[3] [Socket Programming in Python (Guide) by Nathan Jennings](https://realpython.com/python-sockets/) <br>
+[4] [python watchdog monitoring file for changes](https://stackoverflow.com/questions/18599339/python-watchdog-monitoring-file-for-changes) <br>
