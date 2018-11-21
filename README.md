@@ -40,7 +40,7 @@ observer.start()
 
 ```
 
-References:
+# References:
 
 [1] [Automated eye blink detection online by Irene Vigué Guix](https://irenevigueguix.wordpress.com/2016/08/10/automated-eye-blink-detection-online/) <br>
 [2] [Execute shell commands in Python](https://unix.stackexchange.com/questions/238180/execute-shell-commands-in-python) <br>
