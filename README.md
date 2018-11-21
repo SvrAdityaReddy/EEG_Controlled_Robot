@@ -19,9 +19,9 @@ The blink is detected from EEG signal as follow. <br>
 1. The absolute current sample value is subtracted from the mean of previous 8 absolute sample values.
 2. If the absolute deviation of the absolute current sample value is subtracted from the mean of previous 8 absolute sample values is greater than 100 we detect it as blink
 
-## Challenges
+## Detection and Capture of new Samples written to a file by OpenBCI GUI
 
-The OpenBCI GUI writes data of different EEG channels to a file. Inorder to get a new sample written to file we had used **watchdog** to capture file system change events, when a change is observed an observer calls a function which reads new samples of different channels and transmits data of required channel namely FP1 using bash commands **tail**, **cut** and data is transmitted over socket to server running on gopigo robot. 
+The OpenBCI GUI writes data of different EEG channels to a file. Inorder to get a new sample written to file we had used **watchdog** module in python to capture file system change events, when a change is observed an observer calls a function which reads new samples of different channels and transmits data of required channel namely FP1 using bash commands **tail**, **cut** and data is transmitted over socket to server running on gopigo robot. 
 
 ``` {python}
 
@@ -39,3 +39,10 @@ observer.schedule(event_handler, path, recursive=False)
 observer.start()
 
 ```
+
+References:
+
+[1][Automated eye blink detection online by Irene Vigué Guix](https://irenevigueguix.wordpress.com/2016/08/10/automated-eye-blink-detection-online/)
+[2][Execute shell commands in Python](https://unix.stackexchange.com/questions/238180/execute-shell-commands-in-python)
+[3][Socket Programming in Python (Guide) by Nathan Jennings](https://realpython.com/python-sockets/)
+[4][python watchdog monitoring file for changes](https://stackoverflow.com/questions/18599339/python-watchdog-monitoring-file-for-changes)
